@@ -1,0 +1,16 @@
+.container{
+    gap:20px
+}
+.productContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+@media screen and (max-width:400px) {
+    .productContainer{
+        grid-template-columns: 1fr;
+    }
+}
+
+

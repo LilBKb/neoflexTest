@@ -1,0 +1,49 @@
+.container{
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow:0 0 20px 0 rgba(0,0, 0, 0.1);
+    flex-direction: column; 
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+    height:100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: auto;
+    justify-content: space-between;
+}
+.action{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    max-width: 60%;
+
+}
+
+.icon{
+    height: 24px;
+    width: 24px;
+}
+
+.buyButton{
+    background-color: #ffffff;
+}
+
+.productImage{
+    height: 220px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
