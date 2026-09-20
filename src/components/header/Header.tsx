@@ -1,15 +1,31 @@
 import styles from "./styles.module.css";
 import cart from "../../assets/cart.png";
 import like from "../../assets/like.png";
+import ellipse from "../../assets/ellipse.png";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import type { RootState } from "../../store/store";
 
 export const Header = () => {
+  const cartCount = useSelector((state: RootState) => state.items.items.length);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>QPICK</h1>
       <div className={styles.cart}>
-        <div className={styles.wrapper}>
+        <Link
+          to="/cart"
+          className={styles.wrapper}
+          aria-label="Открыть корзину"
+        >
           <img src={cart} />
-        </div>
+          {cartCount > 0 ? (
+            <span className={styles.counter}>
+              <img src={ellipse} />
+              <span>{cartCount > 9 ? "9+" : cartCount}</span>
+            </span>
+          ) : null}
+        </Link>
         <div className={styles.wrapper}>
           <img src={like} />
         </div>

@@ -1,5 +1,8 @@
 import styles from "./styles.module.css";
 import ratingStar from "../../assets/rating.png";
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "../../store/store";
+import { addItem } from "../../store/slices/items";
 
 interface Props {
   image: string;
@@ -16,6 +19,8 @@ export const ProductCard = ({
   name,
   oldPrice,
 }: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+
   return (
     <div className={styles.container}>
       <img src={image} className={styles.productImage} />
@@ -32,7 +37,12 @@ export const ProductCard = ({
             <p>{price} ₽</p>
             {oldPrice ? <p className={styles.old}>{oldPrice} ₽</p> : null}
           </div>
-          <button className={styles.buyButton}>Купить</button>
+          <button
+            className={styles.buyButton}
+            onClick={() => dispatch(addItem({ name, price, rating, image }))}
+          >
+            Купить
+          </button>
         </div>
       </div>
     </div>

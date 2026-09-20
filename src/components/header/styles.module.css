@@ -29,4 +29,30 @@
     width:62px ;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    top: 12px;
+    right: 26px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.counter img {
+    position: absolute;
+    inset: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.counter span {
+    position: relative;
 }

@@ -1,0 +1,39 @@
+.container{
+    margin-inline: auto;
+    max-width: 1110px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 40px;
+}
+
+.title {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.content {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.empty {
+    color: #838383;
+}
+@media screen and (max-width: 760px) {
+    .content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,28 @@
+.summary {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 350px;
+    width: 100%;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px 15px;
+    font-size: 13px;
+}
+
+.orderButton {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background: #101010;
+    color: #ffffff;
+    font-size: 15px;
+}
