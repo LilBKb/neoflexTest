@@ -15,6 +15,7 @@ export const products:Product[] = [
         [{
             name:'Apple EarPods',
             price:2327,
+            oldPrice:5000,
             rating:4.5,
             image:ear
         },

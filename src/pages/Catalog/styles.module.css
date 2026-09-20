@@ -1,4 +1,4 @@
 .container{
-    margin:  0 165px 0 165px;
-    height: 100%;
+    margin-inline: auto;
+    max-width: 1110px;
 }

@@ -1,24 +1,32 @@
 .container{
     height: 60px;
     display: flex;
-    position: relative;
-    margin:0 165px 0 165px;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-inline:auto;
+    max-width: 1135px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 .header{
-    color: #101010;
-    font-size: 24px;
-    position: absolute;
-    top:15px;
+    font-weight: 700;
+    font-size: 25px;
 
 }
 
 
 
 .cart {
-  position: absolute;
-  right: 0;
-  top: 15px;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  max-width: 120px;
+  width: 100%;
+}
+
+.wrapper{
+    height:60px ;
+    width:62px ;
+    display: flex;
+    align-items: center;
 }

@@ -4,6 +4,7 @@ export interface Product{
         name:string,
         rating:number,
         price:number,
+        oldPrice?:number,
         image:string
     }[]
 }

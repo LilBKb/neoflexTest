@@ -7,8 +7,12 @@ export const Header = () => {
     <div className={styles.container}>
       <h1 className={styles.header}>QPICK</h1>
       <div className={styles.cart}>
-        <img src={cart} />
-        <img src={like} />
+        <div className={styles.wrapper}>
+          <img src={cart} />
+        </div>
+        <div className={styles.wrapper}>
+          <img src={like} />
+        </div>
       </div>
     </div>
   );
