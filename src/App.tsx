@@ -7,13 +7,21 @@ import { routes } from "./routes";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-      <Footer />
+      <div className="appShell">
+        <Header />
+        <main className="appContent">
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

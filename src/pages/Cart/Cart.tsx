@@ -5,8 +5,8 @@ import OrderSummary from "../../components/orderSummary/OrderSummary";
 import type { RootState } from "../../store/store";
 
 export const Cart = () => {
-  const items = useSelector((state: RootState) => state.items.items);
-  const total = items.reduce((sum, item) => sum + item.price, 0);
+  const items = useSelector((state: RootState) => state.cart.items);
+  const total = useSelector((state: RootState) => state.cart.totalPrice);
 
   return (
     <div className={styles.container}>
@@ -20,6 +20,7 @@ export const Cart = () => {
                 price={item.price}
                 name={item.name}
                 image={item.image}
+                count={item.count}
               />
             ))
           ) : (

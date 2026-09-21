@@ -1,0 +1,161 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(16, 16, 16, 0.55);
+}
+
+.modal {
+
+    position: relative;
+    max-width: 1110px;
+    width: 100%;
+    min-height: 420px;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    padding: 28px;
+    display: flex;
+    align-items: stretch;
+}
+
+.content {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 32px;
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+    width: 300px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.image {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+.info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 100%;
+}
+
+.name {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #101010;
+}
+
+.description {
+    margin: 0;
+    color: #777777;
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.priceBlock {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.price {
+    margin: 0;
+    font-weight: 600;
+    font-size: 22px;
+    color: #101010;
+}
+
+.oldPrice {
+    color: #ffce7f;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: line-through;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(16, 16, 16, 0.1);
+    border-radius: 50%;
+    background: #ffffff;
+    color: #101010;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+    background: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 20px 16px 16px 20px;
+        min-height: auto;
+        overflow-y: scroll;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageWrapper {
+        width: min(220px, 100%);
+        min-height: 220px;
+    }
+
+    .info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .priceBlock {
+        justify-content: center;
+        margin-top: 8px;
+        padding-top: 0;
+    }
+}

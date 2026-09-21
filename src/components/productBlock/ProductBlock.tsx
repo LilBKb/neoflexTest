@@ -20,6 +20,7 @@ export const ProductBlock = ({ category }: Props) => {
               rating={item.rating}
               name={item.name}
               oldPrice={item.oldPrice}
+              description={item.description}
             />
           ))}
         </div>

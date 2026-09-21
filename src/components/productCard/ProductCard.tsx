@@ -3,6 +3,8 @@ import ratingStar from "../../assets/rating.png";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../store/store";
 import { addItem } from "../../store/slices/items";
+import { useState } from "react";
+import ModalProduct from "../modal/modalProduct/ModalProduct";
 
 interface Props {
   image: string;
@@ -10,6 +12,7 @@ interface Props {
   rating: number;
   name: string;
   oldPrice?: number;
+  description?: string;
 }
 
 export const ProductCard = ({
@@ -18,15 +21,40 @@ export const ProductCard = ({
   rating,
   name,
   oldPrice,
+  description,
 }: Props) => {
   const dispatch = useDispatch<AppDispatch>();
+  const [open, setIsOpen] = useState<boolean>(false);
+
+  const handleCardClick = () => {
+    setIsOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className={styles.container}>
-      <img src={image} className={styles.productImage} />
+      <img
+        src={image}
+        className={styles.productImage}
+        onClick={handleCardClick}
+      />
+      {open && (
+        <ModalProduct
+          price={price}
+          name={name}
+          image={image}
+          handleCloseModal={handleCloseModal}
+          oldPrice={oldPrice}
+          description={description}
+        />
+      )}
       <div className={styles.buy}>
         <div className={styles.info}>
-          <p className={styles.name}>{name}</p>
+          <p className={styles.name} onClick={handleCardClick}>
+            {name}
+          </p>
           <span className={styles.ratingWrapper}>
             <img src={ratingStar} className={styles.icon} />
             <span className={styles.rating}>{rating}</span>
@@ -39,7 +67,7 @@ export const ProductCard = ({
           </div>
           <button
             className={styles.buyButton}
-            onClick={() => dispatch(addItem({ name, price, rating, image }))}
+            onClick={() => dispatch(addItem({ name, price, image }))}
           >
             Купить
           </button>

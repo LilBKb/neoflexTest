@@ -5,13 +5,20 @@ import ellipse from "../../assets/ellipse.png";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import type { RootState } from "../../store/store";
+import { useNavigate } from "react-router";
 
 export const Header = () => {
-  const cartCount = useSelector((state: RootState) => state.items.items.length);
+  const cartCount = useSelector((state: RootState) =>
+    state.cart.items.reduce((sum, item) => sum + item.count, 0),
+  );
+
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>QPICK</h1>
+      <h1 className={styles.header} onClick={() => navigate("/")}>
+        QPICK
+      </h1>
       <div className={styles.cart}>
         <Link
           to="/cart"
