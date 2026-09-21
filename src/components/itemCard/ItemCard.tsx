@@ -32,7 +32,7 @@ export const ItemCard = ({ price, name, image, count }: Props) => {
           <img
             src={plus}
             className={styles.actions}
-            onClick={() => dispatch(addItem({ name, price,image }))}
+            onClick={() => dispatch(addItem({ name, price, image }))}
             alt={`Добавить ${name}`}
           />
         </span>
